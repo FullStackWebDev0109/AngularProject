@@ -1,0 +1,85 @@
+<nav class="navbar navbar-light bg-light header">
+  <div class="navbar-brand">
+    <h3 class="title">Boise</h3>
+    <h1 class="date">Today</h1>
+  </div>
+
+  <div class="image">
+    <img src="assets/images/1.png" alt="avatar" class="avatar">
+  </div>
+</nav>
+
+<div class="body">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title title">Meet Face-to-Face</h2>
+          <h3 class="card-text date">Build Stronger Relationships.</h3>
+          <i class="fa fa-ellipsis-v icon"></i>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">People to Meet</h2>
+          <img *ngFor="let person of persons" src="{{person}}" alt="avatar" class="person">
+          <i class="fa fa-ellipsis-v icon"></i>
+        </div>
+      </div>
+
+      <h4 class="subdate" style="text-align: right;">Today</h4>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3">
+              <img src="assets/images/2.png" alt="avatar" class="growth img-fluid img-thumbnail">
+            </div>
+            <div class="col-9">
+              <h2 class="card-title title" style="color: #333;">Growth Hacking</h2>
+              <h3 class="card-text date">What you should know about driving inbound referrals into your business through online sources.</h3>
+            </div>
+          </div>
+          <i class="fa fa-ellipsis-v icon"></i>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <img *ngFor="let person of persons" src="{{person}}" alt="avatar" class="person" style="margin-bottom: 20px;">
+          <h2 class="card-title">Suzi, Royce and Anna are metting for coffee - join us?</h2>
+          <i class="fa fa-ellipsis-v icon"></i>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h2 class="title">
+            Stats
+            <span class="date" style="float: right;">This Month</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title date">Success begins here.</h1>
+          <h2>The key success is simple, yet it requires the right activity.</h2>
+          <h2 class="date">Make Friends</h2>
+          <h2>People refer and buy from trusted relationships.</h2>
+          <h2 class="date">Give First</h2>
+          <h2>When you help others get what they want, you will get what you want. Make introductions and give referrals.</h2>
+          <i class="fa fa-ellipsis-v icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="row">
+      <div class="col-3" *ngFor="let button of buttons">
+        <a routerLink="{{button.link}}"><i class="{{button.icon}}"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

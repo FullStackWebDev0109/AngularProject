@@ -1,0 +1,49 @@
+<nav class="navbar navbar-light bg-light header">
+  <div class="navbar-brand">
+    <h3 class="title">Boise</h3>
+    <h1 class="date">People</h1>
+  </div>
+
+  <div class="image">
+    <img src="assets/images/1.png" alt="avatar" class="avatar">
+  </div>
+</nav>
+
+<div class="body">
+  <div class="card">
+    <div class="card-body title">
+      <h1>Recently Seen</h1>
+    </div>
+    <div class="card-body title">
+      <h1>Personal Network</h1>
+    </div>
+    <div class="card-body title">
+      <h1>People to Meet</h1>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h1 class="date" style="margin-bottom: 30px; margin-top: 20px;">Recently Seen</h1>
+      </div>
+      <div *ngFor="let card of cards">
+        <div class="row space">
+          <div class="col-3">
+            <img src="{{card.img}}" alt="avatar" class="growth img-fluid img-thumbnail">
+          </div>
+          <div class="col-9">
+            <h2 class="card-title title" style="color: #333;">{{card.name}}</h2>
+            <h3 class="card-text">{{card.title}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="row">
+      <div class="col-3" *ngFor="let button of buttons">
+        <a routerLink="{{button.link}}"><i class="{{button.icon}}"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
