@@ -9,6 +9,7 @@ export class PeopleListComponent implements OnInit {
 
   cards: any;
   buttons: any;
+  titles: any;
   constructor() {
     this.cards = [
       { img: 'assets/images/3.png', name: 'Alena Morris', title: 'Real Estate Agent' },
@@ -23,6 +24,9 @@ export class PeopleListComponent implements OnInit {
       {link: '/people', icon: 'fa fa-group icons'},
       {link: '/event', icon: 'fa fa-calendar-check-o icons'},
       {link: '/messages', icon: 'fa fa-commenting-o icons'}
+    ];
+    this.titles = [
+      'Recently Seen', 'Personal Network', 'People to Meet'
     ];
   }
 

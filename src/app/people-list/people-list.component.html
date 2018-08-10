@@ -11,14 +11,8 @@
 
 <div class="body">
   <div class="card">
-    <div class="card-body title">
-      <h1>Recently Seen</h1>
-    </div>
-    <div class="card-body title">
-      <h1>Personal Network</h1>
-    </div>
-    <div class="card-body title">
-      <h1>People to Meet</h1>
+    <div class="card-body title" *ngFor="let title of titles">
+      <h1>{{title}}</h1>
     </div>
   </div>
   <div class="card">
