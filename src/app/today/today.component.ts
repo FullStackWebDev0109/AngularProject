@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-today',
@@ -9,14 +10,16 @@ import { Observable } from 'rxjs';
 })
 export class TodayComponent implements OnInit {
 
-  eventsObservable: Observable<any[]>;
+  public events: Observable<any[]>;
   persons: any;
   buttons: any;
   text1: string;
   text2: string;
   text3: string;
   text4: string;
-  constructor(private db: AngularFireDatabase) {
+  constructor(db: AngularFirestore) {
+    this.events = db.collection('/events').valueChanges();
+    console.log(this.events, '-----');
     this.persons = [
       'assets/images/1.png', 'assets/images/2.png', 'assets/images/3.png'
     ];
@@ -33,12 +36,6 @@ export class TodayComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.eventsObservable = this.getEvents('/event');
-    console.log(this.eventsObservable, '-----');
-  }
-
-  getEvents(listPath): Observable<any[]> {
-    return this.db.list(listPath).valueChanges();
   }
 
 }

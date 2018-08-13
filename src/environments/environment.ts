@@ -11,6 +11,12 @@ export const environment = {
     projectId: 'talloo-app',
     storageBucket: 'talloo-app.appspot.com',
     messagingSenderId: '652298048160'
+    // apiKey: 'AIzaSyBaVc8e7euC1tPM5LRQkMF4Na6-j94DHQU',
+    // authDomain: 'sample-test-274b9.firebaseapp.com',
+    // databaseURL: 'https://sample-test-274b9.firebaseio.com',
+    // projectId: 'sample-test-274b9',
+    // storageBucket: 'sample-test-274b9.appspot.com',
+    // messagingSenderId: '208871460264'
   }
 };
 
