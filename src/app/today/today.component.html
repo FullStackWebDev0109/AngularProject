@@ -5,7 +5,7 @@
   </div>
 
   <div class="image">
-    <img src="assets/images/1.png" alt="avatar" class="avatar">
+    <img src="assets/images/1.jpg" alt="avatar" class="avatar">
   </div>
 </nav>
 
@@ -34,7 +34,7 @@
         <div class="card-body">
           <div class="row">
             <div class="col-3">
-              <img src="assets/images/2.png" alt="avatar" class="growth img-fluid img-thumbnail">
+              <img src="assets/images/1.jpg" alt="avatar" class="growth img-fluid img-thumbnail">
             </div>
             <div class="col-9">
               <h2 class="card-title title" style="color: #333;">{{event.topic}}</h2>
@@ -48,7 +48,7 @@
 
       <div class="card">
         <div class="card-body">
-          <img *ngFor="let person of persons" src="{{person}}" alt="avatar" class="person" style="margin-bottom: 20px;">
+          <img *ngFor="let user of users" src="{{user.photoURL}}" alt="avatar" class="person" style="margin-bottom: 20px;">
           <h2 class="card-title">{{text2}}</h2>
           <i class="fa fa-ellipsis-v icon"></i>
         </div>

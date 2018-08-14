@@ -23,7 +23,6 @@ export class TodayComponent implements OnInit {
   text4: string;
   constructor(db: AngularFirestore, private http: HttpClient) {
     this.events = db.collection('/events').valueChanges();
-    console.log(this.events, '-----');
     this.persons = [
       'assets/images/1.png', 'assets/images/2.png', 'assets/images/3.png'
     ];
@@ -48,7 +47,6 @@ export class TodayComponent implements OnInit {
       .subscribe(
         users => {
           this.users = users;
-          console.log(this.users, 'users');
         }
       );
   }
