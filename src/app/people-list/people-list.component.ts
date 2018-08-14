@@ -10,7 +10,6 @@ import { map } from 'rxjs/operators';
 export class PeopleListComponent implements OnInit {
 
   users: any;
-  apiUrl: 'https://us-central1-talloo-app.cloudfunctions.net/app/users/recommended';
   cards: any;
   buttons: any;
   titles: any;
@@ -42,7 +41,7 @@ export class PeopleListComponent implements OnInit {
 
   usersServiceSecondGetUsers() {
     return this.http
-      .get<any[]>(this.apiUrl)
+      .get<any[]>('https://us-central1-talloo-app.cloudfunctions.net/app/users/recommended')
         .pipe(map(data => data));
   }
 
