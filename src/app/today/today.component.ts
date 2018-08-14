@@ -3,7 +3,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { HttpClient } from '@angular/common/http';
-import { map, retry } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-today',

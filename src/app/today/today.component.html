@@ -23,7 +23,7 @@
       <div class="card">
         <div class="card-body">
           <h2 class="card-title">People to Meet</h2>
-          <img *ngFor="let person of persons" src="{{person}}" alt="avatar" class="person">
+          <img *ngFor="let user of users" src="{{user.photoURL}}" alt="avatar" class="person">
           <i class="fa fa-ellipsis-v icon"></i>
         </div>
       </div>
@@ -39,7 +39,7 @@
             <div class="col-9">
               <h2 class="card-title title" style="color: #333;">{{event.topic}}</h2>
               <h3 class="card-text date">{{event.description}}</h3>
-              <h3 class="card-text date">{{event.location}} @ {{event.date}}</h3>
+              <h3 class="card-text date">{{event.location}} @ {{event.date.toDate() | date:'mediumTime'}}</h3>
             </div>
           </div>
           <i class="fa fa-ellipsis-v icon"></i>

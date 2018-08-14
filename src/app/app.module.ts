@@ -26,6 +26,7 @@ import { environment } from './../environments/environment';
   imports: [
     BrowserModule,
     HttpClientModule,
+    // HttpClientXsrfModule.disable(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,

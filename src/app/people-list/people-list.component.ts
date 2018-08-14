@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-people-list',
@@ -7,18 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeopleListComponent implements OnInit {
 
+  users: any;
+  apiUrl: 'https://us-central1-talloo-app.cloudfunctions.net/app/users/recommended';
   cards: any;
   buttons: any;
   titles: any;
-  constructor() {
-    this.cards = [
-      { img: 'assets/images/3.png', name: 'Alena Morris', title: 'Real Estate Agent' },
-      { img: 'assets/images/1.png', name: 'Alex Ryer', title: 'Real Estate Broker' },
-      { img: 'assets/images/2.png', name: 'Andrew Blitz', title: 'Life Insurance Agent' },
-      { img: 'assets/images/3.png', name: 'Andy Corbin', title: 'Software Engineer' },
-      { img: 'assets/images/4.png', name: 'Brenda Green', title: 'Photographer' },
-      { img: 'assets/images/1.png', name: 'Betty Morris', title: 'UI/UX Designer' }
-    ];
+  constructor(private http: HttpClient) {
     this.buttons = [
       {link: '', icon: 'fa fa-qrcode icons'},
       {link: '/people', icon: 'fa fa-group icons'},
@@ -31,6 +27,23 @@ export class PeopleListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getSecondUsers();
+  }
+
+  getSecondUsers(): void {
+    this.usersServiceSecondGetUsers()
+    .subscribe(
+      users => {
+        this.users = users;
+        console.log(this.users, 'users');
+      }
+    );
+  }
+
+  usersServiceSecondGetUsers() {
+    return this.http
+      .get<any[]>(this.apiUrl)
+        .pipe(map(data => data));
   }
 
 }

@@ -20,14 +20,14 @@
       <div class="card-title">
         <h1 class="date" style="margin-bottom: 30px; margin-top: 20px;">Recently Seen</h1>
       </div>
-      <div *ngFor="let card of cards">
+      <div *ngFor="let user of users">
         <div class="row space">
           <div class="col-3">
-            <img src="{{card.img}}" alt="avatar" class="growth img-fluid img-thumbnail">
+            <img src="{{user.photoURL}}" alt="avatar" class="growth img-fluid img-thumbnail">
           </div>
           <div class="col-9">
-            <h2 class="card-title title" style="color: #333;">{{card.name}}</h2>
-            <h3 class="card-text">{{card.title}}</h3>
+            <h2 class="card-title title" style="color: #333;">{{user.displayName}}</h2>
+            <!-- <h3 class="card-text">{{card.title}}</h3> -->
           </div>
         </div>
       </div>
