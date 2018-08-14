@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from 'angularfire2/firestore';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-today',

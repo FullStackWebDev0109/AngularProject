@@ -30,15 +30,16 @@
 
       <h4 class="subdate" style="text-align: right;">Today</h4>
 
-      <div class="card">
+      <div class="card" *ngFor="let event of events | async">
         <div class="card-body">
           <div class="row">
             <div class="col-3">
               <img src="assets/images/2.png" alt="avatar" class="growth img-fluid img-thumbnail">
             </div>
             <div class="col-9">
-              <h2 class="card-title title" style="color: #333;">Growth Hacking</h2>
-              <h3 class="card-text date">{{text1}}</h3>
+              <h2 class="card-title title" style="color: #333;">{{event.topic}}</h2>
+              <h3 class="card-text date">{{event.description}}</h3>
+              <h3 class="card-text date">{{event.location}} @ {{event.date}}</h3>
             </div>
           </div>
           <i class="fa fa-ellipsis-v icon"></i>
